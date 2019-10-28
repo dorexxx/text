@@ -1,0 +1,356 @@
+* {
+  transition: 0.5s;
+}
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+}
+
+/*建立基本按鈕*/
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  /*這個是middle 不是center*/
+  vertical-align: middle;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+
+.btn-orange {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+}
+
+.btn-orange:hover {
+  background-color: orangered;
+  border-color: orangered;
+  /*在滑過去會有一個點擊手勢*/
+  cursor: pointer;
+}
+/* 綠色 */
+.btn-green {
+  color: #fff;
+  background-color: green;
+  border-color: green;
+}
+
+.btn-green:hover {
+  background-color: #0f0;
+  border-color: #0f0;
+  cursor: pointer;
+}
+/* 藍色 */
+.btn-blue {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+}
+
+.btn-blue:hover {
+  background-color: #0050a7;
+  border-color: #0050a7;
+  cursor: pointer;
+}
+
+/* 按鈕尺寸 大 */
+.btn-lg {
+  padding: 0.2rem 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+}
+
+/* 頁面結構區 */
+/* Navbar 導覽列 */
+/* line-height 文字行高 */
+#navbar {
+  width: 100%;
+  /* height: 3.5rem; */
+  overflow: hidden;
+  line-height: 3.5rem;
+  background-color: #000;
+
+  /*固定在上方*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+/* navbar logo  */
+#navbar .logo {
+  float: left;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+#navbar .logo a {
+  color: white;
+  text-decoration: none;
+}
+/* navbar menu  */
+#navbar .menu {
+  float: left;
+  margin-left: 3rem;
+}
+
+#navbar .menu li {
+  float: left;
+}
+
+#navbar .menu a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  /* padding 0 1.3rem 0 1.3rem */
+  padding: 0 1.3rem;
+  background-image: linear-gradient(70deg, #fff, #fff);
+  /* webkit 瀏覽器 不同前綴詞 */
+  -webkit-background-clip: text;
+  /* transparent 透明 */
+  color: transparent;
+  float: left;
+  /* display : inline-block ; */
+}
+
+#navbar .menu a:hover {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  outline: 1px solid #dcc803;
+  outline-offset: -0.5rem;
+  padding: 0 1.5rem;
+  background-image: linear-gradient(70deg, #dcc803, #53d852);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#navbar .menu i {
+  background-image: linear-gradient(70deg, #fff, #fff);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+#navbar .menu a:hover i {
+  background-image: linear-gradient(70deg, #dcc803, #53d852);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* #navbar .search */
+#navbar .search {
+  float: right;
+  margin-right: 1rem;
+}
+
+#navbar .search form {
+  font-size: 0;
+}
+
+#navbar form input,
+#navbar form button {
+  display: inline-block;
+  border: none;
+  /*外邊小邊框消失*/
+  outline: none;
+  /*vertical-align:middle 做垂直對齊*/
+  vertical-align: middle;
+}
+
+#navbar form button {
+  height: 2rem;
+  padding: 0 1rem;
+  border-radius: 0 10rem 10rem 0;
+}
+
+#navbar form input[type="search"] {
+  width: 12rem;
+  height: 2rem;
+  border-radius: 10rem 0 0 10rem;
+  padding-left: 1rem;
+}
+
+input:focus {
+  /*inset 內陰影 */
+  box-shadow: inset 0px 0px 10px#0fa, 0px 0px 10px #0f0;
+  filter: drop-shadow(0px 0px 10px rbg(15, 131, 0));
+}
+
+/* 必須用:: ， 不能用: */
+input::placeholder {
+  padding-left: 0.5rem;
+}
+
+/* jumbotro 大螢幕 ---------------------------------------------------------------------------------*/
+#jumbotron {
+  width: 100%;
+  color: #fff;
+  /* 0-15%的位子漸層15-85%透明 85%以後再漸層 */
+  background-image: linear-gradient(
+      to right,
+      #000 0%,
+      transparent 15%,
+      transparent 85%,
+      #000 100%
+    ),
+    url("https://picsum.photos/1920/400/?random=1");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  padding: 6rem 0;
+}
+#jumbotron h1 {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+#jumbotron p {
+  margin: 1.5rem 0;
+  line-height: 1.5;
+}
+/* #design 前端設計 */
+/*
+  原來的盒子計算方式
+  width + padding + border + margin
+
+
+  box-sizing:border-box;
+  改變盒子計算寬度的方式，內距、邊框都會算在width
+  */
+/* box-sizing 考慮 margin */
+
+#desig {
+  padding: 2rem 0;
+}
+
+#design h1 {
+  font-size: 2rem;
+  margin: 0 1rem 2rem 0;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+#design .container {
+  font-size: 0;
+}
+
+#design .col {
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  /* 三個欄寬相加 約91%*/
+  width: 30.3333%;
+  /* margin 9%*/
+  margin: 0 1.5%;
+  display: inline-block;
+  font-size: 1rem;
+  transition: 0.5s;
+  position: relative;
+}
+
+#design .col img {
+  width: 100%;
+}
+#design .col h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-bottom: 1px solid #777;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#design .col p {
+  padding: 1rem 0;
+  line-height: 1.3;
+}
+
+#design .col:hover {
+  transform: translateY(-1rem);
+}
+
+#design .col .close {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+}
+
+#design .col .close:hover {
+  cursor: pointer;
+}
+/* profile 個人履歷
+    #profile{}*/
+
+#profile {
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+#profile .col {
+  width: 50%;
+  float: left;
+}
+
+hr {
+  border-top: 1px solid #ccc;
+}
+
+#profile .col img {
+  width: 100%;
+}
+#profile h1 {
+  font-size: 2rem;
+  margin: 0 1rem 2rem 0;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+#profile h2 {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+#profile .col p {
+  padding: 1rem;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#footer {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+}
+
+@media (max-width: 659px) {
+  #navbar .menu {
+    display: none;
+  }
+  #navbar .search {
+    display: none;
+  }
+}
+
+#design .col {
+  display: block;
+  width: 100%;
+}
+
+#profile .col {
+  float: none;
+  width: 100%;
+}
